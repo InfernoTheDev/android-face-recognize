@@ -7,26 +7,20 @@ import android.util.Log;
 
 import org.opencv.android.OpenCVLoader;
 
+import project.illnino.com.facerec.utils.FaceDetectionUtils;
+
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = MainActivity.class.getName();
 
-    static{
-        //System.loadLibrary("opencv_java");
-        System.loadLibrary("opencv_java3");
-
-        if(!OpenCVLoader.initDebug()){
-            Log.d(TAG, "OpenCV not loaded");
-        } else {
-            Log.d(TAG, "OpenCV loaded");
-        }
-    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        startActivity(new Intent(this, FdActivity.class));
+        FaceDetectionUtils.initialize(MainActivity.this);
+
+        startActivity(new Intent(this, FaceDetectActivity.class));
 
     }
 }

@@ -12,7 +12,7 @@ extern "C" {
  * Method:    nativeCreateObject
  * Signature: (Ljava/lang/String;F)J
  */
-JNIEXPORT jlong JNICALL Java_org_opencv_samples_facedetect_DetectionBasedTracker_nativeCreateObject
+JNIEXPORT jlong JNICALL Java_project_illnino_com_facerec_DetectionBasedTracker_nativeCreateObject
   (JNIEnv *, jclass, jstring, jint);
 
 /*
@@ -20,7 +20,7 @@ JNIEXPORT jlong JNICALL Java_org_opencv_samples_facedetect_DetectionBasedTracker
  * Method:    nativeDestroyObject
  * Signature: (J)V
  */
-JNIEXPORT void JNICALL Java_org_opencv_samples_facedetect_DetectionBasedTracker_nativeDestroyObject
+JNIEXPORT void JNICALL Java_project_illnino_com_facerec_DetectionBasedTracker_nativeDestroyObject
   (JNIEnv *, jclass, jlong);
 
 /*
@@ -28,7 +28,7 @@ JNIEXPORT void JNICALL Java_org_opencv_samples_facedetect_DetectionBasedTracker_
  * Method:    nativeStart
  * Signature: (J)V
  */
-JNIEXPORT void JNICALL Java_org_opencv_samples_facedetect_DetectionBasedTracker_nativeStart
+JNIEXPORT void JNICALL Java_project_illnino_com_facerec_DetectionBasedTracker_nativeStart
   (JNIEnv *, jclass, jlong);
 
 /*
@@ -36,7 +36,7 @@ JNIEXPORT void JNICALL Java_org_opencv_samples_facedetect_DetectionBasedTracker_
  * Method:    nativeStop
  * Signature: (J)V
  */
-JNIEXPORT void JNICALL Java_org_opencv_samples_facedetect_DetectionBasedTracker_nativeStop
+JNIEXPORT void JNICALL Java_project_illnino_com_facerec_DetectionBasedTracker_nativeStop
   (JNIEnv *, jclass, jlong);
 
   /*
@@ -44,7 +44,7 @@ JNIEXPORT void JNICALL Java_org_opencv_samples_facedetect_DetectionBasedTracker_
    * Method:    nativeSetFaceSize
    * Signature: (JI)V
    */
-  JNIEXPORT void JNICALL Java_org_opencv_samples_facedetect_DetectionBasedTracker_nativeSetFaceSize
+  JNIEXPORT void JNICALL Java_project_illnino_com_facerec_DetectionBasedTracker_nativeSetFaceSize
   (JNIEnv *, jclass, jlong, jint);
 
 /*
@@ -52,8 +52,14 @@ JNIEXPORT void JNICALL Java_org_opencv_samples_facedetect_DetectionBasedTracker_
  * Method:    nativeDetect
  * Signature: (JJJ)V
  */
-JNIEXPORT void JNICALL Java_org_opencv_samples_facedetect_DetectionBasedTracker_nativeDetect
+JNIEXPORT void JNICALL Java_project_illnino_com_facerec_DetectionBasedTracker_nativeDetect
   (JNIEnv *, jclass, jlong, jlong, jlong);
+
+JNIEXPORT void JNICALL Java_project_illnino_com_facerec_utils_ImageUtils_saveImageAsPGM
+        (JNIEnv *, jclass, jstring, jlong);
+
+JNIEXPORT int JNICALL Java_project_illnino_com_facerec_FaceDetectActivity_faceRecognition
+        (JNIEnv *, jclass, jlong, jint);
 
 #ifdef __cplusplus
 }
